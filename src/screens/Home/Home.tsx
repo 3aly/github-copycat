@@ -1,14 +1,9 @@
-// import { HomeHeader, TaskBoard } from "@components/organisms";
-// import { useSelector } from "react-redux";
-// import { AppState } from "../../types/props";
-
 import { PagesController } from "@components/molecules";
 import { UserList } from "@components/organisms";
 import { User } from "@datatypes/types";
 import { fakeData } from "@fakers/index";
-import { useFetchUsers } from "@hooks/index";
-import { useFetchFollowers } from "@hooks/useFetchFollowers/useFetchFollowers";
-import { Box, Container } from "@mui/material";
+import { useFetchAllUsers } from "@hooks/index";
+import { Container } from "@mui/material";
 import { usersSlicer } from "@utils/utils";
 import { useState } from "react";
 import { useStyles } from "./Home.styles";
@@ -18,7 +13,7 @@ function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const { classes } = useStyles();
 
-  const { data, isError, isLoading } = useFetchUsers({
+  const { data, isError, isLoading } = useFetchAllUsers({
     onSuccess: (data) => {
       console.log("data loaded", data);
     },

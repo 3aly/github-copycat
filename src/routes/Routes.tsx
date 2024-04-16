@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { useStyles } from "./Routes.styles";
-import { Home } from "@screens/index";
+import { Home, UserDetails } from "@screens/index";
 
 const Routers = () => {
   const { classes } = useStyles();
@@ -13,6 +13,7 @@ const Routers = () => {
           {/* <Route path="/" element={<Login />} /> */}
           {/* <Route path="/splash" element={<SplashScreen />} /> */}
           <Route path="/" element={<Home />} />
+          <Route path="/user/:login" element={<UserDetails />} />
         </Routes>
       </Router>
     </div>
