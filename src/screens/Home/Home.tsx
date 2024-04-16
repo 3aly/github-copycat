@@ -23,17 +23,6 @@ function Home() {
     setCurrentPage(page);
   };
 
-  // const {
-  //   data: followers,
-  //   isLoading,
-  //   isError,
-  // } = useFetchFollowers({
-  //   username: "mojombo",
-  //   onSuccess: (data: { users: [] }) => {
-  //     console.log(data);
-  //     // setUsers(data);
-  //   },
-  // });
   return (
     <Container className={classes.container}>
       <UserList users={usersSlicer(users, currentPage)} />
