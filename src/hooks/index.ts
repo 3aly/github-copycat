@@ -1,2 +1,1 @@
-// export { useFetchAllMovies } from "./useFetchAllMovies/useFetchAllMovies";
-export {};
+export { useFetchUsers } from "./useFetchUsers/useFetchUsers";

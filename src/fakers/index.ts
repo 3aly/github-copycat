@@ -1,2 +1,1 @@
-// export { default as fakeData } from "./fakeData.json";
-export {};
+export { default as fakeData } from "./fakeData.json";

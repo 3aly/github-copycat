@@ -1,2 +1,2 @@
-// export { default as queryAllMovies } from "./queryAllMovies/queryAllMovies";
-export {};
+export { default as queryUsers } from "./queryUsers/queryUsers";
+export { default as queryFollowers } from "./queryFollowers/queryFollowers";
