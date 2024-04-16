@@ -5,6 +5,9 @@ export const useStyles = makeStyles()((theme) => {
     container: {
       backgroundColor: theme.palette.secondary.main,
       minHeight: "100vh",
+      justifyContent: "center",
+      display: "flex",
+      flexDirection: "column",
     },
   };
 });
