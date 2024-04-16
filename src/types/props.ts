@@ -15,3 +15,6 @@ export interface PaginationProps {
   currentPage: number; // Current page number
   onPageChange: (page: number) => void; // Function to handle page change
 }
+export interface LineSeparatorProps {
+  orientation?: "horizontal" | "vertical"; // Optional, defaults to 'horizontal'
+}
