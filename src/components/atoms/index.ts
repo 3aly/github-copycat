@@ -1,2 +1,1 @@
-// export { default as AddButton } from "./AddButton/AddButton";
-export {};
+export { default as Title } from "./Title/Title";
