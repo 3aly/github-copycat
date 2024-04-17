@@ -7,6 +7,7 @@ import {
   Switch,
   Menu,
   MenuItem,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -18,6 +19,7 @@ import { Toggler } from "@components/molecules";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleTheme } from "@redux/themeReducer";
+import { Logo } from "@components/atoms";
 const Navbar = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -36,9 +38,9 @@ const Navbar = () => {
     <AppBar position="absolute">
       <Toolbar className={classes.toolbar}>
         <div className={classes.iconContainer}>
-          <IconButton onClick={handleHomeClick}>
-            <GitHubIcon color={"action"} />
-          </IconButton>
+          <Button onClick={handleHomeClick}>
+            <Logo />
+          </Button>
         </div>
         <div className={classes.iconContainer}>
           <IconButton onClick={handleThemeChange}>

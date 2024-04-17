@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { StoreType } from "@datatypes/types";
 import { theme } from "@constants/theme";
 import { darkTheme } from "@constants/darkTheme";
+import { Footer } from "./components";
 
 function App() {
   const { darkMode } = useSelector((state: StoreType) => state.theme);
@@ -19,6 +20,7 @@ function App() {
         <div className="App">
           <Routers />
         </div>
+        <Footer />
       </ThemeProvider>
     </ProvidersWrapper>
   );
