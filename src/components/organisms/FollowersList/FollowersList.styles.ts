@@ -48,7 +48,6 @@ export const useStyles = makeStyles()((theme) => {
     clickable: {
       cursor: "pointer",
       display: "flex",
-      background: "red",
       flexDirection: "column",
     },
     usernameContainer: { display: "flex", flexDirection: "row" },

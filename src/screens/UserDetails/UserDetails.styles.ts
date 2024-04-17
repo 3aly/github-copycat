@@ -2,7 +2,8 @@ import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => ({
   container: {
-    margin: theme.spacing(10),
+    // margin: theme.spacing(10),
+    width: "80%",
 
     alignSelf: "center",
     borderRadius: 10,
@@ -35,7 +36,6 @@ export const useStyles = makeStyles()((theme) => ({
   },
 
   moreDataContainer: {
-    // width: "60%",
     [theme.breakpoints.down("xl")]: { width: "auto" },
     [theme.breakpoints.down("lg")]: {
       padding: theme.spacing(3),

@@ -68,14 +68,18 @@ export const useStyles = makeStyles()((theme) => {
     iconsContainer: {
       flexDirection: "row",
       display: "flex",
-      backgroundColor: "red",
+
+      justifyContent: "space-around",
+
       alignSelf: "flex-end",
     },
-    icon: {
+    icons: {
       flexDirection: "row",
       display: "flex",
-
-      alignItems: "center",
+      marginInline: theme.spacing(0.8),
+    },
+    icon: {
+      marginInline: theme.spacing(0.4),
     },
   };
 });

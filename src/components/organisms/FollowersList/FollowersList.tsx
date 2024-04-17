@@ -43,9 +43,12 @@ const FollowersList = ({
       </Box>
       <Grid container spacing={1} columnSpacing={quickStyles.responsiveGrid}>
         {followersData?.slice(0, 5).map((user) => (
-          <Grid item key={user.id} xs={6} sm={6} md={3} lg={3}>
-            <div
+          <Grid item key={user.id} xs={6} sm={6}>
+            <Box
               onClick={() => handleFollowerClick(user.login)}
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
               style={{ cursor: "pointer" }}
             >
               <Avatar
@@ -56,7 +59,7 @@ const FollowersList = ({
               <Typography color={"text.primary"} variant="body2">
                 {user.login}
               </Typography>
-            </div>
+            </Box>
           </Grid>
         ))}
       </Grid>

@@ -62,37 +62,36 @@ const UserDetails = () => {
     public_gists,
   } = userDetails;
   return (
-    <>
+    <Box className={classes.container}>
       {isLoading ? (
         <Loader /> // Show loader when isLoading is true
       ) : (
         <>
-          <Box className={classes.container}>
-            <LineSeparator orientation="horizontal" />
-            <Box className={classes.contactContainer}>
-              <ContactData
-                {...{
-                  login,
-                  name,
-                  avatar_url,
+          <LineSeparator orientation="horizontal" />
+          <Box className={classes.contactContainer}>
+            <ContactData
+              {...{
+                login,
+                name,
+                avatar_url,
 
-                  blog,
-                  location,
-                  company,
-                }}
+                blog,
+                location,
+                company,
+              }}
+            />
+            <Box className={classes.moreDataContainer}>
+              <MoreData
+                {...{ bio, public_repos, public_gists, followers, following }}
               />
-              <Box className={classes.moreDataContainer}>
-                <MoreData
-                  {...{ bio, public_repos, public_gists, followers, following }}
-                />
+              <LineSeparator orientation="horizontal" />
 
-                <FollowersList {...{ followersData, login }} />
-              </Box>
+              <FollowersList {...{ followersData, login }} />
             </Box>
           </Box>
         </>
       )}
-    </>
+    </Box>
   );
 };
 

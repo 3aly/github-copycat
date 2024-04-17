@@ -25,7 +25,7 @@ export const useStyles = makeStyles()((theme) => ({
       height: theme.spacing(4),
     },
     [theme.breakpoints.down("sm")]: {
-      height: theme.spacing(2),
+      height: theme.spacing(4),
     },
   },
   container: {

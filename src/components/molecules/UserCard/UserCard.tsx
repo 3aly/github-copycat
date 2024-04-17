@@ -49,8 +49,12 @@ const UserCard = ({ login, avatar_url, html_url }: UserCardProps) => {
         </Box>
       </Box>
       <Box className={classes.iconsContainer}>
-        <Box className={classes.icon}>
-          <PeopleIcon color={"action"} sx={quickStyles.responsiveSmallIcons} />
+        <Box className={classes.icons}>
+          <PeopleIcon
+            color={"action"}
+            sx={quickStyles.responsiveSmallIcons}
+            className={classes.icon}
+          />
           <Typography
             color={"text.primary"}
             variant="body2"
@@ -59,8 +63,12 @@ const UserCard = ({ login, avatar_url, html_url }: UserCardProps) => {
             {generateRandomNumber()}
           </Typography>
         </Box>
-        <Box className={classes.icon}>
-          <GitHub color={"action"} sx={quickStyles.responsiveSmallIcons} />
+        <Box className={classes.icons}>
+          <GitHub
+            color={"action"}
+            sx={quickStyles.responsiveSmallIcons}
+            className={classes.icon}
+          />
           <Typography
             color={"text.primary"}
             variant="body2"
