@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { PaginationProps } from "@datatypes/props";
 import { useStyles } from "./PagesController.styles";
@@ -39,11 +39,12 @@ const Pagination = ({ total, currentPage, onPageChange }: PaginationProps) => {
             sx={{
               backgroundColor:
                 currentPage === page ? "primary.light" : "inherit",
-              color: currentPage === page ? "white" : "inherit",
+              color:
+                currentPage === page ? "primary.background.default" : "inherit",
             }}
             className={classes.page}
           >
-            {page}
+            <Typography color={"text.primary"}>{page}</Typography>
           </IconButton>
         ))}
       </Box>

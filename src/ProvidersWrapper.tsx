@@ -26,11 +26,11 @@ export function ProvidersWrapper({
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        {/* <CacheProvider value={cacheRtl}> */}
-        <StyledEngineProvider injectFirst>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </StyledEngineProvider>
-        {/* </CacheProvider> */}
+        <Provider store={store}>
+          {/* <CacheProvider value={cacheRtl}> */}
+          <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>
+          {/* </CacheProvider> */}
+        </Provider>
       </QueryClientProvider>
     </>
   );

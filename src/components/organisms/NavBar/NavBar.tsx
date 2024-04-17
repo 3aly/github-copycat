@@ -15,61 +15,41 @@ import LanguageIcon from "@mui/icons-material/Language";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useStyles } from "./NavBar.styles";
 import { Toggler } from "@components/molecules";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "@redux/themeReducer";
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [language, setLanguage] = useState<"en" | "ar">("en");
-  const { classes } = useStyles();
 
+  const { classes } = useStyles();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleThemeChange = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
+    dispatch(toggleTheme());
   };
-
-  const handleLanguageChange = () => {
-    const newLanguage = language === "en" ? "ar" : "en";
-    setLanguage(newLanguage);
-    setAnchorEl(null);
+  const handleHomeClick = () => {
+    navigate(`/`);
   };
-
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
-    <AppBar position="sticky">
+    <AppBar position="absolute">
       <Toolbar className={classes.toolbar}>
         <div className={classes.iconContainer}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={handleMenuOpen}
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
+          <IconButton onClick={handleHomeClick}>
+            <GitHubIcon color={"action"} />
           </IconButton>
-          <GitHubIcon />
         </div>
         <div className={classes.iconContainer}>
-          <IconButton color="inherit" onClick={handleThemeChange}>
-            {theme === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
+          <IconButton onClick={handleThemeChange}>
+            {theme === "light" ? (
+              <Brightness4Icon color={"action"} />
+            ) : (
+              <Brightness7Icon color={"action"} />
+            )}
           </IconButton>
           <Toggler />
         </div>
-        <Menu
-          id="language-menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleMenuClose}
-        >
-          <MenuItem onClick={handleLanguageChange}>English</MenuItem>
-          <MenuItem onClick={handleLanguageChange}>العربية</MenuItem>
-        </Menu>
       </Toolbar>
     </AppBar>
   );

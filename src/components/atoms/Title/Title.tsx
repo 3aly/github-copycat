@@ -5,7 +5,9 @@ const Title = ({ title }: { title: string }) => {
   const { classes } = useStyles();
   return (
     <div className={classes.container}>
-      <Typography variant="h3">{title}:</Typography>
+      <Typography variant="h3" color={"text.primary"}>
+        {title}:
+      </Typography>
     </div>
   );
 };

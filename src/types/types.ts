@@ -19,3 +19,5 @@ export type UserData = {
   public_repos?: number;
   public_gists?: number;
 };
+
+export type StoreType = { theme: { darkMode: boolean } };

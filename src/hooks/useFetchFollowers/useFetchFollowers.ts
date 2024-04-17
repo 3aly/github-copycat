@@ -6,14 +6,15 @@ export const useFetchFollowers = ({
   onSuccess,
   ...rest
 }: {
-  username: string;
+  username?: string;
   onSuccess?: (data: any) => void;
+  onError?: (data: any) => void;
   rest?: UseQueryOptions<{ genres: [] }, []>;
 }) => {
   const query = useQuery({
     queryKey: ["useFetchFollowers", username],
     queryFn: () => queryFollowers(username),
-    enabled: true,
+    enabled: false,
 
     refetchOnWindowFocus: false,
 

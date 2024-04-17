@@ -20,7 +20,7 @@ const FollowersList = ({
   };
   return (
     <div className={classes.container}>
-      <Typography className={classes.title} variant="h6">
+      <Typography color={"text.primary"} className={classes.title} variant="h6">
         Top 5 Followers of {login}
       </Typography>
       <Grid container spacing={5}>
@@ -35,7 +35,9 @@ const FollowersList = ({
                 alt={user.login}
                 sx={{ width: 56, height: 56 }}
               />
-              <Typography variant="body2">{user.login}</Typography>
+              <Typography color={"text.primary"} variant="body2">
+                {user.login}
+              </Typography>
             </div>
           </Grid>
         ))}

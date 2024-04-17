@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { COLORS, DARK } from "./colors";
+import { COLORS } from "./colors";
 
 export const theme = createTheme({
   direction: "rtl", // Switch between 'rtl' and 'ltr'
@@ -14,32 +14,36 @@ export const theme = createTheme({
     },
   },
   palette: {
+    mode: "dark", // Essential for dark mode
     primary: {
-      main: "#083678",
-      light: "#0073e6",
+      main: COLORS.primary,
+      light: COLORS.primaryLight,
+    },
+    action: {
+      active: COLORS.actionPrimary,
     },
     secondary: {
-      main: "#003366",
+      main: COLORS.secondary,
     },
     background: {
-      default: "#f4f4f4",
-      paper: "#ffffff",
+      default: COLORS.backgroundDefault,
+      paper: COLORS.backgroundPaper,
     },
     text: {
-      primary: "#333333",
-      secondary: "#ffffff",
+      primary: COLORS.textPrimary,
+      secondary: COLORS.textSecondary,
     },
     error: {
-      main: "#e57373",
+      main: COLORS.error,
     },
     warning: {
-      main: "#ffb74d",
+      main: COLORS.warning,
     },
     info: {
-      main: "#64b5f6",
+      main: COLORS.info,
     },
     success: {
-      main: "#81c784",
+      main: COLORS.success,
     },
     contrastThreshold: 3,
     tonalOffset: 0.2,

@@ -25,11 +25,11 @@ export const useStyles = makeStyles()((theme) => ({
     height: theme.spacing(40),
   },
 
-  allContainer: {
+  titleContainer: {
     display: "flex",
-    width: theme.spacing(200),
-    flexDirection: "row",
-    // justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    textAlign: "left",
   },
 
   detailsContainer: {

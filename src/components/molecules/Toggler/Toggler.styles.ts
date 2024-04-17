@@ -2,6 +2,7 @@ import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => ({
   container: {
+    marginInline: theme.spacing(2),
     "& .MuiToggleButtonGroup-grouped": {
       border: `1px solid ${theme.palette.primary.main}`, // Set the border color
       "&.Mui-selected": {

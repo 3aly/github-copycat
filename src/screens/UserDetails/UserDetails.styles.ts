@@ -3,7 +3,8 @@ import { makeStyles } from "tss-react/mui";
 export const useStyles = makeStyles()((theme) => ({
   container: {
     // backgroundColor: "red",
-
+    alignSelf: "center",
+    borderRadius: 10,
     // marginTop: theme.spacing(2),
     background: theme.palette.background.default,
     display: "flex",

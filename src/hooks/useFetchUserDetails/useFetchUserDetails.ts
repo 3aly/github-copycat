@@ -8,12 +8,14 @@ export const useFetchUserDetails = ({
 }: {
   username?: string;
   onSuccess?: (data: any) => void;
-  rest?: UseQueryOptions<{ genres: [] }, []>;
+  onError?: (data: any) => void;
+
+  rest?: UseQueryOptions<[], []>;
 }) => {
   const query = useQuery({
     queryKey: ["useFetchUserDetails", username],
     queryFn: () => queryUserDetails(username),
-    enabled: true,
+    enabled: false,
 
     refetchOnWindowFocus: false,
 

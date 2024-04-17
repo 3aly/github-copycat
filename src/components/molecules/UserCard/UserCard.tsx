@@ -33,24 +33,30 @@ const UserCard = ({ login, avatar_url, html_url }: UserCardProps) => {
           sx={{ width: 100, height: 100, borderRadius: 1 }}
         />
         <div className={classes.titleContainer}>
-          <Typography variant="h6" component="div">
+          <Typography color={"text.primary"} variant="h6" component="div">
             {login}
           </Typography>
-          <Typography variant="body2">{html_url}</Typography>
+          <Typography color={"text.primary"} variant="body2">
+            {html_url}
+          </Typography>
         </div>
       </CardContent>
       <div className={classes.iconsContainer}>
         <div className={classes.icon}>
           <IconButton disabled>
-            <PeopleIcon />
+            <PeopleIcon color={"action"} />
           </IconButton>
-          <Typography variant="body2">{generateRandomNumber()}</Typography>
+          <Typography color={"text.primary"} variant="body2">
+            {generateRandomNumber()}
+          </Typography>
         </div>
         <div className={classes.icon}>
           <IconButton disabled>
-            <GitHub />
+            <GitHub color={"action"} />
           </IconButton>
-          <Typography variant="body2">{generateRandomNumber()}</Typography>
+          <Typography color={"text.primary"} variant="body2">
+            {generateRandomNumber()}
+          </Typography>
         </div>
       </div>
     </CardActionArea>

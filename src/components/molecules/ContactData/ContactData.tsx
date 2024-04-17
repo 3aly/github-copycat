@@ -10,9 +10,7 @@ const ContactData = ({
   login,
   name,
   avatar_url,
-  followers,
-  following,
-  blog,
+  blog = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sint pariatur in porro animi ipsam modi, qui id? Ea quasi quaerat ipsa dolor rem veritatis quam error. Veritatis, tenetur quas",
   location,
   company,
 }: UserData) => {
@@ -21,14 +19,19 @@ const ContactData = ({
   return (
     <div className={classes.detailsContainer}>
       <Avatar src={avatar_url} className={classes.avatar} alt={login} />
-      <Typography variant="h4">{name}</Typography>
+      <Typography variant="h4" color={"text.primary"}>
+        {name}
+      </Typography>
       <Typography variant="h6" color={"text.primary"}>
         {login}
       </Typography>
-
       <div className={classes.iconContainer}>
-        <LinkIcon fontSize={"small"} sx={{ marginInlineEnd: 1 }} />
-        <Typography className={classes.info}>
+        <LinkIcon
+          color={"action"}
+          fontSize={"small"}
+          sx={{ marginInlineEnd: 1 }}
+        />
+        <Typography className={classes.info} color={"text.primary"}>
           <a className={classes.link} href={blog}>
             {blog}
           </a>
@@ -36,8 +39,18 @@ const ContactData = ({
       </div>
       <LineSeparator orientation="horizontal" />
 
-      <Typography className={classes.info}>Location: {location}</Typography>
-      <Typography className={classes.info}>Company: {company}</Typography>
+      <div className={classes.titleContainer}>
+        {location && (
+          <Typography className={classes.info} color={"text.primary"}>
+            Location: {location}
+          </Typography>
+        )}
+        {company && (
+          <Typography className={classes.info} color={"text.primary"}>
+            Company: {company}
+          </Typography>
+        )}
+      </div>
     </div>
   );
 };

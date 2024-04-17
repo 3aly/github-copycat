@@ -12,22 +12,22 @@ export const useStyles = makeStyles()((theme) => {
       // paddingInline: 350,
     },
     button: {
-      backgroundColor: "white",
+      backgroundColor: theme.palette.background.default,
       marginRight: 20,
       marginLeft: 20,
-      "&:hover": { backgroundColor: theme.palette.secondary.main },
+      "&:hover": { backgroundColor: theme.palette.background.default },
 
-      borderRadius: 10, // Rounded corners
+      borderRadius: 5, // Rounded corners
     },
     page: {
-      borderRadius: 10, // Rounded corners
-      "&:hover": { backgroundColor: "grey.100" },
+      borderRadius: 5, // Rounded corners
+      "&:hover": { backgroundColor: theme.palette.background.default },
       paddingInline: 30,
     },
     pagesContainer: {
       borderRadius: 10, // Rounded corners
-      backgroundColor: "white",
-      "&:hover": { backgroundColor: "grey.100" },
+      backgroundColor: theme.palette.background.default,
+      "&:hover": { backgroundColor: theme.palette.background.default },
     },
   };
 });

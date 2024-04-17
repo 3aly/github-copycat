@@ -20,34 +20,58 @@ const MoreData = ({
       <div>
         <div className={classes.container}>
           <div className={classes.iconContainer}>
-            <PeopleIcon fontSize={"small"} sx={{ mx: 1 }} />
-            <Typography fontWeight={"bold"} className={classes.info}>
+            <PeopleIcon color={"action"} fontSize={"small"} sx={{ mx: 1 }} />
+            <Typography
+              color={"text.primary"}
+              fontWeight={"bold"}
+              className={classes.info}
+            >
               followers {followers}
             </Typography>
           </div>
 
           <div className={classes.iconContainer}>
-            <GitHub fontSize={"small"} sx={{ mx: 1 }} />
-            <Typography fontWeight={"bold"} className={classes.info}>
+            <GitHub color={"action"} fontSize={"small"} sx={{ mx: 1 }} />
+            <Typography
+              color={"text.primary"}
+              fontWeight={"bold"}
+              className={classes.info}
+            >
               following {following}
             </Typography>
           </div>
           <div className={classes.iconContainer}>
-            <CardMembershipIcon fontSize={"small"} sx={{ mx: 1 }} />
-            <Typography fontWeight={"bold"} className={classes.info}>
+            <CardMembershipIcon
+              color={"action"}
+              fontSize={"small"}
+              sx={{ mx: 1 }}
+            />
+            <Typography
+              color={"text.primary"}
+              fontWeight={"bold"}
+              className={classes.info}
+            >
               Repositories {public_repos}
             </Typography>
           </div>
           <div className={classes.iconContainer}>
-            <TurnedInNotIcon fontSize={"small"} sx={{ mx: 1 }} />
-            <Typography fontWeight={"bold"} className={classes.info}>
+            <TurnedInNotIcon
+              color={"action"}
+              fontSize={"small"}
+              sx={{ mx: 1 }}
+            />
+            <Typography
+              color={"text.primary"}
+              fontWeight={"bold"}
+              className={classes.info}
+            >
               Gists {public_gists}
             </Typography>
           </div>
         </div>
         <LineSeparator />
       </div>
-      <Typography variant="h5" className={classes.info}>
+      <Typography color={"text.primary"} variant="h5" className={classes.info}>
         {bio}
       </Typography>
     </>
