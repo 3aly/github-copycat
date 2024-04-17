@@ -5,7 +5,8 @@ import PeopleIcon from "@mui/icons-material/People";
 import { UserData } from "@datatypes/types";
 import CardMembershipIcon from "@mui/icons-material/CardMembership";
 import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
-import { LineSeparator } from "@components/atoms";
+import { LineSeparator, RowBase } from "@components/atoms";
+import { Grid } from "@mui/material";
 const MoreData = ({
   bio,
   public_repos,
@@ -17,57 +18,26 @@ const MoreData = ({
 
   return (
     <>
-      <div>
+      <div className={classes.allContainer}>
         <div className={classes.container}>
-          <div className={classes.iconContainer}>
-            <PeopleIcon color={"action"} fontSize={"small"} sx={{ mx: 1 }} />
-            <Typography
-              color={"text.primary"}
-              fontWeight={"bold"}
-              className={classes.info}
-            >
-              followers {followers}
-            </Typography>
-          </div>
-
-          <div className={classes.iconContainer}>
-            <GitHub color={"action"} fontSize={"small"} sx={{ mx: 1 }} />
-            <Typography
-              color={"text.primary"}
-              fontWeight={"bold"}
-              className={classes.info}
-            >
-              following {following}
-            </Typography>
-          </div>
-          <div className={classes.iconContainer}>
-            <CardMembershipIcon
-              color={"action"}
-              fontSize={"small"}
-              sx={{ mx: 1 }}
-            />
-            <Typography
-              color={"text.primary"}
-              fontWeight={"bold"}
-              className={classes.info}
-            >
-              Repositories {public_repos}
-            </Typography>
-          </div>
-          <div className={classes.iconContainer}>
-            <TurnedInNotIcon
-              color={"action"}
-              fontSize={"small"}
-              sx={{ mx: 1 }}
-            />
-            <Typography
-              color={"text.primary"}
-              fontWeight={"bold"}
-              className={classes.info}
-            >
-              Gists {public_gists}
-            </Typography>
-          </div>
+          <Grid container spacing={7}>
+            <Grid item>
+              <RowBase title={"followers "} icon="People" number={followers} />
+            </Grid>
+            <Grid item>
+              <RowBase title={"following "} icon="GitHub" number={following} />
+            </Grid>
+            <Grid item>
+              <RowBase
+                title={"Repositories "}
+                icon="Repo"
+                number={public_repos}
+              />
+            </Grid>
+            <Grid item>
+              <RowBase title={"Gists "} icon="Gist" number={public_gists} />
+            </Grid>
+          </Grid>
         </div>
         <LineSeparator />
       </div>

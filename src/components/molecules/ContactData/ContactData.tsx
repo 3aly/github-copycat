@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import { useStyles } from "./ContactData.styles";
 
-import { LineSeparator } from "@components/atoms";
+import { LineSeparator, RowBase } from "@components/atoms";
 import { UserData } from "@datatypes/types";
 import LinkIcon from "@mui/icons-material/Link";
 
@@ -22,21 +22,10 @@ const ContactData = ({
       <Typography variant="h4" color={"text.primary"}>
         {name}
       </Typography>
-      <Typography variant="h6" color={"text.primary"}>
+      <Typography variant="h6" color={"text.secondary"}>
         {login}
       </Typography>
-      <div className={classes.iconContainer}>
-        <LinkIcon
-          color={"action"}
-          fontSize={"small"}
-          sx={{ marginInlineEnd: 1 }}
-        />
-        <Typography className={classes.info} color={"text.primary"}>
-          <a className={classes.link} href={blog}>
-            {blog}
-          </a>
-        </Typography>
-      </div>
+      <RowBase link={blog} icon="Link" />
       <LineSeparator orientation="horizontal" />
 
       <div className={classes.titleContainer}>
