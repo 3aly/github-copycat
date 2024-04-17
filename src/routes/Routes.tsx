@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { useStyles } from "./Routes.styles";
 import { Home, UserDetails } from "@screens/index";
-import { NavBar } from "@components/organisms";
+import { Footer, NavBar } from "@components/organisms";
 import Navbar from "@components/organisms/NavBar/NavBar";
 
 const Routers = () => {

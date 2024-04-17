@@ -21,3 +21,5 @@ export type UserData = {
 };
 
 export type StoreType = { theme: { darkMode: boolean } };
+
+export type IconsTypes = "GitHub" | "People" | "Link" | "Repo" | "Gist";

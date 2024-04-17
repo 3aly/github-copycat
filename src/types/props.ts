@@ -1,3 +1,5 @@
+import { IconsTypes } from "./types";
+
 export interface TaskType {}
 
 // export interface User {
@@ -17,4 +19,10 @@ export interface PaginationProps {
 }
 export interface LineSeparatorProps {
   orientation?: "horizontal" | "vertical"; // Optional, defaults to 'horizontal'
+}
+export interface RowBaseProps {
+  icon: IconsTypes; // Optional, defaults to 'horizontal'
+  title?: string | number; // Optional
+  number?: number; //
+  link?: string; // Optional
 }

@@ -14,3 +14,7 @@ export function generateRandomNumber(): number {
 
   return scaledNumber;
 }
+
+export const linkOpener = (url: string) => {
+  window.open(url, "_blank", "noopener,noreferrer");
+};
