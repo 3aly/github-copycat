@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import React from "react";
 import { useStyles } from "./Loader.styles";
 
-const Loader = ({ isLoading }: { isLoading: boolean }) => {
+const Loader = ({ isLoading = true }: { isLoading?: boolean }) => {
   const { classes } = useStyles();
 
   if (!isLoading) return null;

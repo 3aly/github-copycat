@@ -7,6 +7,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import XIcon from "@mui/icons-material/X";
 import { linkOpener } from "@utils/utils";
 import { GitHub } from "@mui/icons-material";
+import { t } from "i18next";
 
 const Footer: React.FC = () => {
   const { classes } = useStyles();
@@ -14,6 +15,9 @@ const Footer: React.FC = () => {
   return (
     <footer className={classes.footer}>
       <Grid container alignItems="center" justifyContent="space-between">
+        <Grid item className={classes.copyRight}>
+          <Typography variant="body1">{t("copyrights")}</Typography>
+        </Grid>
         <Grid item className={classes.socialMedia}>
           <IconButton
             onClick={() => linkOpener("https://www.instagram.com/3aly_7efny")}
@@ -33,11 +37,6 @@ const Footer: React.FC = () => {
           <IconButton onClick={() => linkOpener("https://github.com/3aly")}>
             <GitHub color={"action"} />
           </IconButton>
-        </Grid>
-        <Grid item className={classes.copyRight}>
-          <Typography variant="body2">
-            © 2023 جميع الحقوق محفوظة لعلي حفني
-          </Typography>
         </Grid>
       </Grid>
     </footer>

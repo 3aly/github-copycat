@@ -1,7 +1,13 @@
 import { User } from "@datatypes/types";
 
-export const usersSlicer = (users: User[], currentPage: number): User[] => {
-  return users.slice((currentPage - 1) * 5, (currentPage - 1) * 5 + 5);
+export const usersSlicer = (
+  users: User[],
+  currentPage: number
+): { total: number; sliced: User[] } => {
+  return {
+    total: users.length,
+    sliced: users.slice((currentPage - 1) * 5, (currentPage - 1) * 5 + 5),
+  };
 };
 export function generateRandomNumber(): number {
   // Generate a random decimal number between 0 and 1

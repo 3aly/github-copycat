@@ -8,7 +8,7 @@ export const useStyles = makeStyles()((theme) => ({
     alignItems: "center",
   },
   container: {
-    background: theme.palette.background.default,
+    background: theme.direction,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -21,9 +21,7 @@ export const useStyles = makeStyles()((theme) => ({
     marginInlineEnd: theme.spacing(3),
   },
 
-  info: {
-    textAlign: "left",
-  },
+  info: {},
   link: {
     textDecoration: "none",
   },

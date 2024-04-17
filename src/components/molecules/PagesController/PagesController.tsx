@@ -3,6 +3,7 @@ import { Box, IconButton, Typography } from "@mui/material";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { PaginationProps } from "@datatypes/props";
 import { useStyles } from "./PagesController.styles";
+import i18next from "i18next";
 
 const Pagination = ({ total, currentPage, onPageChange }: PaginationProps) => {
   const { classes } = useStyles();
@@ -29,7 +30,15 @@ const Pagination = ({ total, currentPage, onPageChange }: PaginationProps) => {
         disabled={currentPage === 1}
         className={classes.button}
       >
-        <ArrowLeft color="primary" />
+        {i18next.language === "ar" ? (
+          <>
+            <ArrowRight color="primary" />
+          </>
+        ) : (
+          <>
+            <ArrowLeft color="primary" />
+          </>
+        )}
       </IconButton>
       <Box className={classes.pagesContainer}>
         {middlePages().map((page) => (
@@ -53,7 +62,15 @@ const Pagination = ({ total, currentPage, onPageChange }: PaginationProps) => {
         disabled={currentPage === pageCount}
         className={classes.button}
       >
-        <ArrowRight color="primary" />
+        {i18next.language === "ar" ? (
+          <>
+            <ArrowLeft color="primary" />
+          </>
+        ) : (
+          <>
+            <ArrowRight color="primary" />
+          </>
+        )}
       </IconButton>
     </Box>
   );

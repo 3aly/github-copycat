@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import { useStyles } from "./Toggler.styles";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import {
+  Box,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from "@mui/material";
+import i18next from "i18next";
+import { toggleLoading } from "@redux/LoaderReducer";
+import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 const Toggler = () => {
   const [language, setLanguage] = useState("en");
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { classes } = useStyles();
 
   const handleLanguageChange = (
@@ -12,24 +23,36 @@ const Toggler = () => {
   ) => {
     if (newLanguage !== null) {
       setLanguage(newLanguage);
+      dispatch(toggleLoading());
+      i18next.changeLanguage(newLanguage).then(() => {
+        setTimeout(() => {
+          dispatch(toggleLoading());
+        }, 500);
+      });
+      const isRtl = newLanguage === "ar";
+      document.body.dir = isRtl ? "rtl" : "ltr";
     }
   };
 
   return (
-    <ToggleButtonGroup
-      value={language}
-      exclusive
-      onChange={handleLanguageChange}
-      aria-label="text alignment"
-      className={classes.container}
-    >
-      <ToggleButton value="en" aria-label="left aligned">
-        EN
-      </ToggleButton>
-      <ToggleButton value="ar" aria-label="centered">
-        عربى
-      </ToggleButton>
-    </ToggleButtonGroup>
+    <Box className={classes.container}>
+      <ToggleButtonGroup
+        value={language}
+        exclusive
+        onChange={handleLanguageChange}
+      >
+        <ToggleButton value="en">
+          <Typography fontWeight={"bold"} variant="body1">
+            {t("en")}
+          </Typography>
+        </ToggleButton>
+        <ToggleButton value="ar">
+          <Typography fontWeight={"bold"} variant="body1">
+            {t("ar")}
+          </Typography>
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </Box>
   );
 };
 

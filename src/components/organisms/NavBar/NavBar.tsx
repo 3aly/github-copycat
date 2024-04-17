@@ -1,25 +1,15 @@
 import React, { useState } from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Switch,
-  Menu,
-  MenuItem,
-  Button,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Toolbar, IconButton, Button } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import LanguageIcon from "@mui/icons-material/Language";
-import GitHubIcon from "@mui/icons-material/GitHub";
+
 import { useStyles } from "./NavBar.styles";
 import { Toggler } from "@components/molecules";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleTheme } from "@redux/themeReducer";
 import { Logo } from "@components/atoms";
+import { toggleLoading } from "@redux/LoaderReducer";
 const Navbar = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -28,8 +18,13 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const handleThemeChange = () => {
     const newTheme = theme === "light" ? "dark" : "light";
+    dispatch(toggleLoading());
+
     setTheme(newTheme);
     dispatch(toggleTheme());
+    setTimeout(() => {
+      dispatch(toggleLoading());
+    }, 500);
   };
   const handleHomeClick = () => {
     navigate(`/`);

@@ -1,3 +1,13 @@
 {
-  "users": "Github Users"
+  "users": "Github Users",
+  "followers": "followers",
+  "following": "following",
+  "repositories": "repositories",
+  "gist": "gist",
+  "location": "location",
+  "company": "company",
+  "top": "Top 5 Followers of",
+  "copyrights": "© 2024 All rights reserved to Ali Hefny",
+  "en": "انجليزي",
+  "ar": "AR"
 }

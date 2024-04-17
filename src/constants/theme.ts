@@ -2,8 +2,6 @@ import { createTheme } from "@mui/material/styles";
 import { COLORS } from "./colors";
 
 export const theme = createTheme({
-  direction: "rtl", // Switch between 'rtl' and 'ltr'
-
   breakpoints: {
     values: {
       xs: 0,

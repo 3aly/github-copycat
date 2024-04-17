@@ -1,6 +1,6 @@
 import { PagesController } from "@components/molecules";
 import { UserList } from "@components/organisms";
-import { ErrorType, User } from "@datatypes/types";
+import { ErrorType, StoreType, User } from "@datatypes/types";
 import { fakeData } from "@fakers/index";
 import { useFetchAllUsers } from "@hooks/index";
 import { Container, Typography } from "@mui/material";
@@ -8,8 +8,11 @@ import { usersSlicer } from "@utils/utils";
 import { useState } from "react";
 import { useStyles } from "./Home.styles";
 import { Loader } from "@components/atoms";
+import { useSelector } from "react-redux";
 
 function Home() {
+  const { isLoading } = useSelector((state: StoreType) => state.loader);
+
   const [users, setUsers] = useState<User[]>(fakeData);
   const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState("");
@@ -19,7 +22,7 @@ function Home() {
   const {
     // data: users,
     isError,
-    isLoading,
+    isLoading: isUsersLoading,
   } = useFetchAllUsers({
     onError: (data: ErrorType) => {
       console.log("error:", data);
@@ -41,12 +44,18 @@ function Home() {
 
   return (
     <Container className={classes.container}>
-      <UserList users={usersSlicer(users, currentPage)} />
-      <PagesController
-        total={users?.length ?? 0}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <UserList users={usersSlicer(users, currentPage)} />
+          <PagesController
+            total={users?.length ?? 0}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
+        </>
+      )}
     </Container>
   );
 }

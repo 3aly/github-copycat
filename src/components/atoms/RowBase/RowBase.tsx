@@ -52,9 +52,18 @@ const RowBase = ({ icon, title, link, number }: RowBaseProps) => {
           {link}
         </Link>
       ) : (
-        <Typography color={"text.primary"} fontWeight={"bold"}>
-          {title} {number}
-        </Typography>
+        <>
+          <Typography color={"text.primary"} fontWeight={"bold"}>
+            {title}
+          </Typography>
+          <Typography
+            color={"text.primary"}
+            fontWeight={"bold"}
+            sx={{ mx: 0.5 }}
+          >
+            {number}
+          </Typography>
+        </>
       )}
     </div>
   );

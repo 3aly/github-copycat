@@ -20,6 +20,9 @@ export type UserData = {
   public_gists?: number;
 };
 
-export type StoreType = { theme: { darkMode: boolean } };
+export type StoreType = {
+  theme: { darkMode: boolean };
+  loader: { isLoading: boolean };
+};
 
 export type IconsTypes = "GitHub" | "People" | "Link" | "Repo" | "Gist";

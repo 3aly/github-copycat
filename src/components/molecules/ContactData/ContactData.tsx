@@ -4,7 +4,8 @@ import { useStyles } from "./ContactData.styles";
 
 import { LineSeparator, RowBase } from "@components/atoms";
 import { UserData } from "@datatypes/types";
-import LinkIcon from "@mui/icons-material/Link";
+import { Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const ContactData = ({
   login,
@@ -15,6 +16,7 @@ const ContactData = ({
   company,
 }: UserData) => {
   const { classes } = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div className={classes.detailsContainer}>
@@ -30,14 +32,24 @@ const ContactData = ({
 
       <div className={classes.titleContainer}>
         {location && (
-          <Typography className={classes.info} color={"text.primary"}>
-            Location: {location}
-          </Typography>
+          <Box flexDirection={"row"} display={"flex"}>
+            <Typography className={classes.info} color={"text.primary"}>
+              {t("location")}:
+            </Typography>
+            <Typography className={classes.info} color={"text.primary"}>
+              {location}
+            </Typography>
+          </Box>
         )}
         {company && (
-          <Typography className={classes.info} color={"text.primary"}>
-            Company: {company}
-          </Typography>
+          <Box flexDirection={"row"} display={"flex"}>
+            <Typography className={classes.info} color={"text.primary"}>
+              {t("company")}:
+            </Typography>
+            <Typography className={classes.info} color={"text.primary"}>
+              {company}
+            </Typography>
+          </Box>
         )}
       </div>
     </div>

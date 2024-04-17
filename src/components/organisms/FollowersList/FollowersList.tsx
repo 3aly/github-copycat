@@ -1,8 +1,9 @@
-import { Typography, Grid, Avatar } from "@mui/material";
+import { Typography, Grid, Avatar, Box } from "@mui/material";
 
 import { User } from "@datatypes/types";
 import { useStyles } from "./FollowersList.styles";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const FollowersList = ({
   followersData,
@@ -12,6 +13,7 @@ const FollowersList = ({
   followersData: User[];
 }) => {
   const { classes } = useStyles();
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
@@ -20,9 +22,23 @@ const FollowersList = ({
   };
   return (
     <div className={classes.container}>
-      <Typography color={"text.primary"} className={classes.title} variant="h6">
-        Top 5 Followers of {login}
-      </Typography>
+      <Box display={"flex"} flexDirection={"row"}>
+        <Typography
+          color={"text.primary"}
+          className={classes.title}
+          variant="h6"
+          sx={{ mx: 0.5 }}
+        >
+          {t("top")}
+        </Typography>
+        <Typography
+          color={"text.primary"}
+          className={classes.title}
+          variant="h6"
+        >
+          {login}
+        </Typography>
+      </Box>
       <Grid container spacing={5}>
         {followersData?.slice(0, 5).map((user) => (
           <Grid item key={user.id}>

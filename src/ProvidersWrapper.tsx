@@ -10,7 +10,8 @@ import {
 import { createUseCache } from "tss-react/makeStyles";
 import { CacheProvider } from "@emotion/react";
 import { theme } from "@constants/theme";
-
+import { I18nextProvider } from "react-i18next";
+import i18n from "./locales/index";
 export function ProvidersWrapper({
   children,
 }: {
@@ -26,11 +27,13 @@ export function ProvidersWrapper({
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Provider store={store}>
-          {/* <CacheProvider value={cacheRtl}> */}
-          <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>
-          {/* </CacheProvider> */}
-        </Provider>
+        <I18nextProvider i18n={i18n}>
+          <Provider store={store}>
+            {/* <CacheProvider value={cacheRtl}> */}
+            <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>
+            {/* </CacheProvider> */}
+          </Provider>
+        </I18nextProvider>
       </QueryClientProvider>
     </>
   );
