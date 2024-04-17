@@ -1,5 +1,17 @@
 import { createTheme } from "@mui/material/styles";
 import { COLORS } from "./colors";
+import {
+  responsiveIcons,
+  layouts,
+  responsiveSmallIcons,
+  responsiveGrid,
+} from "./quickstyles";
+export const quickStyles = {
+  responsiveIcons,
+  responsiveSmallIcons,
+  layouts,
+  responsiveGrid,
+};
 
 export const theme = createTheme({
   breakpoints: {

@@ -4,7 +4,7 @@ import { useStyles } from "./MoreData.styles";
 import { UserData } from "@datatypes/types";
 
 import { LineSeparator, RowBase } from "@components/atoms";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 const MoreData = ({
   bio,
@@ -18,41 +18,31 @@ const MoreData = ({
 
   return (
     <>
-      <div className={classes.allContainer}>
-        <div className={classes.container}>
-          <Grid container spacing={7}>
-            <Grid item>
-              <RowBase
-                title={t("followers")}
-                icon="People"
-                number={followers}
-              />
-            </Grid>
-            <Grid item>
-              <RowBase
-                title={t("following")}
-                icon="GitHub"
-                number={following}
-              />
-            </Grid>
-            <Grid item>
-              <RowBase
-                title={t("repositories")}
-                icon="Repo"
-                number={public_repos}
-              />
-            </Grid>
-            <Grid item>
-              <RowBase title={t("gist")} icon="Gist" number={public_gists} />
-            </Grid>
+      <Box className={classes.allContainer}>
+        <Grid container spacing={3} className={classes.container}>
+          <Grid item>
+            <RowBase title={t("followers")} icon="People" number={followers} />
           </Grid>
-        </div>
+          <Grid item>
+            <RowBase title={t("following")} icon="GitHub" number={following} />
+          </Grid>
+          <Grid item>
+            <RowBase
+              title={t("repositories")}
+              icon="Repo"
+              number={public_repos}
+            />
+          </Grid>
+          <Grid item>
+            <RowBase title={t("gist")} icon="Gist" number={public_gists} />
+          </Grid>
+        </Grid>
         <LineSeparator />
-      </div>
+      </Box>
       <Typography
         color={"text.primary"}
-        variant="h5"
-        className={classes.info}
+        variant="h6"
+        className={classes.responsiveText}
         sx={{ textAlign: i18n.language === "ar" ? "right" : "left" }}
       >
         {bio}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, IconButton, Button } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Button, Box } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 
@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { toggleTheme } from "@redux/themeReducer";
 import { Logo } from "@components/atoms";
 import { toggleLoading } from "@redux/LoaderReducer";
+import { quickStyles } from "@constants/theme";
 const Navbar = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
@@ -32,21 +33,27 @@ const Navbar = () => {
   return (
     <AppBar position="absolute">
       <Toolbar className={classes.toolbar}>
-        <div className={classes.iconContainer}>
+        <Box className={classes.logoContainer}>
           <Button onClick={handleHomeClick}>
             <Logo />
           </Button>
-        </div>
-        <div className={classes.iconContainer}>
+        </Box>
+        <Box className={classes.iconContainer}>
           <IconButton onClick={handleThemeChange}>
             {theme === "light" ? (
-              <Brightness4Icon color={"action"} />
+              <Brightness4Icon
+                color={"action"}
+                sx={quickStyles.responsiveIcons}
+              />
             ) : (
-              <Brightness7Icon color={"action"} />
+              <Brightness7Icon
+                color={"action"}
+                sx={quickStyles.responsiveIcons}
+              />
             )}
           </IconButton>
           <Toggler />
-        </div>
+        </Box>
       </Toolbar>
     </AppBar>
   );

@@ -19,40 +19,60 @@ const ContactData = ({
   const { t } = useTranslation();
 
   return (
-    <div className={classes.detailsContainer}>
+    <Box className={classes.container}>
       <Avatar src={avatar_url} className={classes.avatar} alt={login} />
-      <Typography variant="h4" color={"text.primary"}>
+      <Typography
+        variant="h4"
+        color={"text.primary"}
+        className={classes.responsiveText}
+      >
         {name}
       </Typography>
-      <Typography variant="h6" color={"text.secondary"}>
+      <Typography
+        variant="h6"
+        color={"text.secondary"}
+        className={classes.responsiveText}
+      >
         {login}
       </Typography>
       <RowBase link={blog} icon="Link" />
       <LineSeparator orientation="horizontal" />
 
-      <div className={classes.titleContainer}>
+      <Box className={classes.titleContainer}>
         {location && (
           <Box flexDirection={"row"} display={"flex"}>
-            <Typography className={classes.info} color={"text.primary"}>
+            <Typography
+              className={`${classes.info} ${classes.responsiveText}}`}
+              color={"text.primary"}
+            >
               {t("location")}:
             </Typography>
-            <Typography className={classes.info} color={"text.primary"}>
+            <Typography
+              className={`${classes.info} ${classes.responsiveText}}`}
+              color={"text.primary"}
+            >
               {location}
             </Typography>
           </Box>
         )}
         {company && (
           <Box flexDirection={"row"} display={"flex"}>
-            <Typography className={classes.info} color={"text.primary"}>
+            <Typography
+              className={`${classes.info} ${classes.responsiveText}}`}
+              color={"text.primary"}
+            >
               {t("company")}:
             </Typography>
-            <Typography className={classes.info} color={"text.primary"}>
+            <Typography
+              className={`${classes.info} ${classes.responsiveText}}`}
+              color={"text.primary"}
+            >
               {company}
             </Typography>
           </Box>
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

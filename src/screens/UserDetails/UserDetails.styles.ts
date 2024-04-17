@@ -2,33 +2,54 @@ import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => ({
   container: {
-    // backgroundColor: "red",
+    margin: theme.spacing(10),
+
     alignSelf: "center",
     borderRadius: 10,
-    // marginTop: theme.spacing(2),
     background: theme.palette.background.default,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     padding: theme.spacing(10),
+    [theme.breakpoints.up("md")]: {
+      // styles for screens larger than 'md'
+      display: "flex",
+      justifyContent: "space-between",
+    },
+    [theme.breakpoints.down("md")]: {
+      // styles for screens larger than 'md'
+      margin: theme.spacing(10),
+      padding: theme.spacing(4),
+    },
   },
 
-  allContainer: {
+  contactContainer: {
     display: "flex",
-    width: theme.spacing(200),
     flexDirection: "row",
-    // justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      // changes to row layout on larger screens
+      flexDirection: "column",
+      alignContent: "center",
+      // backgroundColor: "red",
+    },
   },
 
-  detailsContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "center",
-  },
-  dataContainer: {
-    width: "60%",
-
+  moreDataContainer: {
+    // width: "60%",
+    [theme.breakpoints.down("xl")]: { width: "auto" },
+    [theme.breakpoints.down("lg")]: {
+      padding: theme.spacing(3),
+      marginInline: theme.spacing(2),
+    },
+    [theme.breakpoints.down("md")]: {
+      padding: theme.spacing(1),
+      // marginInline: theme.spacing(2),
+    },
+    [theme.breakpoints.down("sm")]: {
+      // backgroundColor: "red",
+      padding: theme.spacing(2),
+      marginInline: theme.spacing(0),
+    },
     marginInline: theme.spacing(10),
     padding: theme.spacing(5),
     borderWidth: 1,
@@ -41,12 +62,4 @@ export const useStyles = makeStyles()((theme) => ({
     alignContent: "center",
     borderStyle: "solid",
   },
-  // followingContainer: {
-  //   display: "flex",
-  //   flexDirection: "row",
-  //   // alignSelf: "flex-end",
-  //   // alignContent: "flex-end",
-  //   // justifyContent: "flex-end",
-  //   // alignItems: "flex-start",
-  // },
 }));

@@ -1,28 +1,45 @@
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => ({
-  container: {
-    // backgroundColor: "red",
-
-    // marginTop: theme.spacing(2),
-    background: theme.palette.background.default,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: theme.spacing(2),
-  },
-
-  iconContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+  responsiveText: {
+    fontSize: "1rem", // Default size
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "1.2rem", // Larger text on sm screens and above
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.5rem", // Even larger text on md screens and above
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "2rem", // Even larger text on md screens and above
+    },
   },
   avatar: {
     width: theme.spacing(40),
+    height: theme.spacing(40),
+
+    [theme.breakpoints.down("xl")]: {
+      bottom: theme.spacing(9),
+      height: theme.spacing(30),
+      width: theme.spacing(30),
+    },
+    [theme.breakpoints.down("lg")]: {
+      bottom: theme.spacing(7),
+      height: theme.spacing(35),
+      width: theme.spacing(35),
+    },
+    [theme.breakpoints.down("md")]: {
+      bottom: theme.spacing(7),
+      height: theme.spacing(40),
+      width: theme.spacing(40),
+    },
+    [theme.breakpoints.down("sm")]: {
+      bottom: theme.spacing(4),
+      height: theme.spacing(20),
+      width: theme.spacing(20),
+    },
+
     position: "relative",
     bottom: theme.spacing(5),
-    height: theme.spacing(40),
   },
 
   titleContainer: {
@@ -32,35 +49,16 @@ export const useStyles = makeStyles()((theme) => ({
     textAlign: "left",
   },
 
-  detailsContainer: {
+  container: {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "center",
   },
-  dataContainer: {
-    width: "60%",
 
-    marginInline: theme.spacing(10),
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: theme.palette.text.primary,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around",
-    alignItems: "center",
-    borderStyle: "solid",
-  },
-  followingContainer: {
-    display: "flex",
-    flexDirection: "row",
-    // alignSelf: "flex-end",
-    // alignContent: "flex-end",
-    // justifyContent: "flex-end",
-    // alignItems: "flex-start",
-  },
   info: {
     marginBlock: theme.spacing(1),
+    marginInlineEnd: theme.spacing(1),
   },
   link: {
     textDecoration: "none",

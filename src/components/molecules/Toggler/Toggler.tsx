@@ -40,14 +40,23 @@ const Toggler = () => {
         value={language}
         exclusive
         onChange={handleLanguageChange}
+        fullWidth // Ensures the button group uses the full width of its container
       >
-        <ToggleButton value="en">
-          <Typography fontWeight={"bold"} variant="body1">
+        <ToggleButton value="en" className={classes.toggleButton}>
+          <Typography
+            fontWeight={"bold"}
+            variant="body1"
+            className={classes.responsiveText}
+          >
             {t("en")}
           </Typography>
         </ToggleButton>
-        <ToggleButton value="ar">
-          <Typography fontWeight={"bold"} variant="body1">
+        <ToggleButton value="ar" className={classes.toggleButton}>
+          <Typography
+            fontWeight={"bold"}
+            variant="body1"
+            className={classes.responsiveText}
+          >
             {t("ar")}
           </Typography>
         </ToggleButton>

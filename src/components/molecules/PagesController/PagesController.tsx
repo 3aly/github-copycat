@@ -53,7 +53,12 @@ const Pagination = ({ total, currentPage, onPageChange }: PaginationProps) => {
             }}
             className={classes.page}
           >
-            <Typography color={"text.primary"}>{page}</Typography>
+            <Typography
+              color={"text.primary"}
+              className={classes.responsiveText}
+            >
+              {page}
+            </Typography>
           </IconButton>
         ))}
       </Box>
