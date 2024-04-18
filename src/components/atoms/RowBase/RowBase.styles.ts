@@ -4,7 +4,7 @@ import { makeStyles } from "tss-react/mui";
 export const useStyles = makeStyles()((theme) => {
   return {
     responsiveText: {
-      fontSize: "1.25rem",
+      fontSize: "0.8rem",
       [theme.breakpoints.down("lg")]: {
         fontSize: "1rem",
       },

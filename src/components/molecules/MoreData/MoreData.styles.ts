@@ -19,6 +19,7 @@ export const useStyles = makeStyles()((theme) => ({
     background: theme.palette.background.default,
     ...layouts.col,
     ...layouts.yCentered,
+    width: "100%",
   },
   container: {
     ...layouts.row,

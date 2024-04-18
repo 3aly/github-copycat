@@ -31,28 +31,31 @@ export const useStyles = makeStyles()((theme) => ({
   },
 
   moreDataContainer: {
-    [theme.breakpoints.down("xl")]: { width: "auto" },
-    [theme.breakpoints.down("lg")]: {
-      padding: theme.spacing(3),
-      marginInline: theme.spacing(2),
-    },
-    [theme.breakpoints.down("md")]: {
-      padding: theme.spacing(1),
-    },
-    [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(2),
-      marginInline: theme.spacing(0),
-    },
     marginInline: theme.spacing(10),
     padding: theme.spacing(5),
     borderWidth: 1,
     borderRadius: 10,
     borderColor: theme.palette.text.primary,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    alignContent: "center",
+    ...layouts.col,
+    ...layouts.justifyBetween,
+    ...layouts.alignStart,
+    ...layouts.contentCenter,
+    width: "80%",
+
     borderStyle: "solid",
+    [theme.breakpoints.down("lg")]: {
+      width: "80%",
+      padding: theme.spacing(3),
+      marginInline: theme.spacing(1),
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "90%",
+
+      ...layouts.selfCenter,
+    },
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2),
+      marginInline: theme.spacing(0),
+    },
   },
 }));

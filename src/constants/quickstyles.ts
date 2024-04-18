@@ -1,6 +1,6 @@
 import { Layout } from "@datatypes/types";
 
-export const responsiveIcons = { fontSize: { xs: 15, sm: 22, md: 25, lg: 30 } };
+export const responsiveIcons = { fontSize: { xs: 15, sm: 22, md: 23, lg: 24 } };
 export const responsiveSmallIcons = {
   fontSize: { xs: 10, sm: 13, md: 15, lg: 18 },
 };

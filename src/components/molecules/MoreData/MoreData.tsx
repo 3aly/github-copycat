@@ -19,21 +19,21 @@ const MoreData = ({
   return (
     <>
       <Box className={classes.allContainer}>
-        <Grid container spacing={3} className={classes.container}>
-          <Grid item>
+        <Grid container className={classes.container}>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <RowBase title={t("followers")} icon="People" number={followers} />
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <RowBase title={t("following")} icon="GitHub" number={following} />
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <RowBase
               title={t("repositories")}
               icon="Repo"
               number={public_repos}
             />
           </Grid>
-          <Grid item>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <RowBase title={t("gist")} icon="Gist" number={public_gists} />
           </Grid>
         </Grid>
