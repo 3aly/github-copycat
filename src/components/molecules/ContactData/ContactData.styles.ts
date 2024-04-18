@@ -15,9 +15,10 @@ export const useStyles = makeStyles()((theme) => ({
     },
   },
   avatar: {
-    width: theme.spacing(40),
-    height: theme.spacing(40),
-
+    width: theme.spacing(45),
+    height: theme.spacing(45),
+    position: "relative",
+    bottom: theme.spacing(8),
     [theme.breakpoints.down("xl")]: {
       bottom: theme.spacing(9),
       height: theme.spacing(30),
@@ -29,7 +30,7 @@ export const useStyles = makeStyles()((theme) => ({
       width: theme.spacing(35),
     },
     [theme.breakpoints.down("md")]: {
-      bottom: theme.spacing(7),
+      bottom: theme.spacing(5),
       height: theme.spacing(40),
       width: theme.spacing(40),
     },
@@ -38,9 +39,6 @@ export const useStyles = makeStyles()((theme) => ({
       height: theme.spacing(20),
       width: theme.spacing(20),
     },
-
-    position: "relative",
-    bottom: theme.spacing(5),
   },
 
   titleContainer: {
