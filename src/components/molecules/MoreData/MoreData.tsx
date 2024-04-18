@@ -39,14 +39,29 @@ const MoreData = ({
         </Grid>
         <LineSeparator />
       </Box>
-      <Typography
-        color={"text.primary"}
-        variant="h6"
-        className={classes.responsiveText}
-        sx={{ textAlign: i18n.language === "ar" ? "right" : "left" }}
-      >
-        {bio}
-      </Typography>
+      {bio ? (
+        <>
+          <Typography
+            color={"text.primary"}
+            variant="h6"
+            className={classes.responsiveText}
+            sx={{ textAlign: i18n.language === "ar" ? "right" : "left" }}
+          >
+            {bio}
+          </Typography>
+        </>
+      ) : (
+        <>
+          <Typography
+            color={"error"}
+            variant="h3"
+            className={classes.responsiveText}
+            sx={{ textAlign: i18n.language === "ar" ? "right" : "left" }}
+          >
+            {t("no_bio")}
+          </Typography>
+        </>
+      )}
     </>
   );
 };

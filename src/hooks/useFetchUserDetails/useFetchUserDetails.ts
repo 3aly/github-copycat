@@ -15,7 +15,7 @@ export const useFetchUserDetails = ({
   const query = useQuery({
     queryKey: ["useFetchUserDetails", username],
     queryFn: () => queryUserDetails(username),
-    enabled: false,
+    enabled: true,
 
     refetchOnWindowFocus: false,
 

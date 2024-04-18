@@ -1,29 +1,30 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => {
   return {
     responsiveText: {
-      fontSize: "2rem", // Default size
+      fontSize: "2rem",
       [theme.breakpoints.down("lg")]: {
-        fontSize: "2rem", // Even larger text on md screens and above
+        fontSize: "2rem",
       },
       [theme.breakpoints.down("md")]: {
-        fontSize: "2rem", // Even larger text on md screens and above
+        fontSize: "2rem",
       },
       [theme.breakpoints.down("sm")]: {
-        fontSize: "0.8rem", // Larger text on sm screens and above
+        fontSize: "0.8rem",
       },
     },
     responsiveNumbers: {
-      fontSize: "1.5", // Default size
+      fontSize: "1.5",
       [theme.breakpoints.down("lg")]: {
-        fontSize: "1.3rem", // Even larger text on md screens and above
+        fontSize: "1rem",
       },
       [theme.breakpoints.down("md")]: {
-        fontSize: "1rem", // Even larger text on md screens and above
+        fontSize: "1rem",
       },
       [theme.breakpoints.down("sm")]: {
-        fontSize: "0.6rem", // Larger text on sm screens and above
+        fontSize: "0.6rem",
       },
     },
     avatar: {
@@ -49,33 +50,28 @@ export const useStyles = makeStyles()((theme) => {
       },
     },
     container: {
-      flexDirection: "row",
-      display: "flex",
-      justifyContent: "space-between",
+      ...layouts.row,
+      ...layouts.justifyBetween,
     },
     content: {
-      display: "flex",
-      flexDirection: "row",
+      ...layouts.row,
     },
     titleContainer: {
-      flexDirection: "column",
-      display: "flex",
-      alignSelf: "flex-start",
-      marginInlineStart: theme.spacing(2),
+      ...layouts.col,
+      ...layouts.selfStart,
+      ...layouts.alignStart,
 
-      alignItems: "flex-start",
+      marginInlineStart: theme.spacing(2),
     },
     iconsContainer: {
-      flexDirection: "row",
-      display: "flex",
-
-      justifyContent: "space-around",
-
-      alignSelf: "flex-end",
+      ...layouts.row,
+      ...layouts.justifyBetween,
+      ...layouts.selfEnd,
     },
     icons: {
-      flexDirection: "row",
-      display: "flex",
+      ...layouts.row,
+      ...layouts.yCentered,
+
       marginInline: theme.spacing(0.8),
     },
     icon: {

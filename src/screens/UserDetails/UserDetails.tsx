@@ -13,14 +13,14 @@ import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 const UserDetails = () => {
   const [error, setError] = useState("");
-  const [userDetails, setUserDetails] = useState(fakeUser);
-  const [followersData, setFollowers] = useState(fakeFollowers);
+  // const [userDetails, setUserDetails] = useState(fakeUser);
+  // const [followersData, setFollowers] = useState(fakeFollowers);
   const { classes } = useStyles();
   const { isLoading } = useSelector((state: StoreType) => state.loader);
 
   const { login } = useParams<{ login: string }>();
   const {
-    // data: userDetails,
+    data: userDetails = {},
     isLoading: isLoadingUser,
     isError: isUserError,
   } = useFetchUserDetails({
@@ -32,7 +32,7 @@ const UserDetails = () => {
   });
 
   const {
-    // data: followersData,
+    data: followersData,
     isLoading: isLoadingFollowers,
     isError: isFollowersError,
   } = useFetchFollowers({
@@ -64,7 +64,7 @@ const UserDetails = () => {
   return (
     <Box className={classes.container}>
       {isLoading ? (
-        <Loader /> // Show loader when isLoading is true
+        <Loader />
       ) : (
         <>
           <LineSeparator orientation="horizontal" />

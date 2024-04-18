@@ -1,50 +1,46 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => {
   return {
     responsiveText: {
-      fontSize: "1.25rem", // Default size
+      fontSize: "1.25rem",
       [theme.breakpoints.down("lg")]: {
-        fontSize: "1rem", // Even larger text on md screens and above
+        fontSize: "1rem",
       },
       [theme.breakpoints.down("md")]: {
-        fontSize: "1rem", // Even larger text on md screens and above
+        fontSize: "1rem",
       },
       [theme.breakpoints.down("sm")]: {
-        fontSize: "0.8rem", // Larger text on sm screens and above
+        fontSize: "0.8rem",
       },
     },
     container: {
-      // alignSelf: "center",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignItems: "center",
+      ...layouts.row,
+      ...layouts.justifyBetween,
+      ...layouts.yCentered,
       margin: theme.spacing(2),
-      // width: "40%",
-      // paddingInline: 350,
     },
     button: {
       backgroundColor: theme.palette.background.default,
       marginInline: theme.spacing(4),
-      padding: theme.spacing(1), // Smaller padding on small screens
+      padding: theme.spacing(1),
 
-      // marginLeft: 20,
       "&:hover": { backgroundColor: theme.palette.background.default },
 
-      borderRadius: 5, // Rounded corners
+      borderRadius: 5,
       [theme.breakpoints.down("lg")]: {
-        padding: theme.spacing(0.7), // Smaller padding on small screens
+        padding: theme.spacing(0.7),
       },
       [theme.breakpoints.down("md")]: {
-        padding: theme.spacing(0.5), // Smaller padding on small screens
+        padding: theme.spacing(0.5),
       },
       [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(0), // Smaller padding on small screens
+        padding: theme.spacing(0),
       },
     },
     page: {
-      borderRadius: 5, // Rounded corners
+      borderRadius: 5,
       "&:hover": { backgroundColor: theme.palette.background.default },
       paddingInline: theme.spacing(2.5),
       [theme.breakpoints.down("lg")]: {
@@ -58,7 +54,7 @@ export const useStyles = makeStyles()((theme) => {
       },
     },
     pagesContainer: {
-      borderRadius: 10, // Rounded corners
+      borderRadius: 10,
       backgroundColor: theme.palette.background.default,
       "&:hover": { backgroundColor: theme.palette.background.default },
     },

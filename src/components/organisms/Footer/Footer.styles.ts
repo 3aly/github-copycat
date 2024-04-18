@@ -1,40 +1,34 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => {
   return {
     responsiveText: {
-      fontSize: "1.25rem", // Default size
+      fontSize: "1.25rem",
       [theme.breakpoints.down("lg")]: {
-        fontSize: "1rem", // Even larger text on md screens and above
-      },
-      [theme.breakpoints.down("md")]: {
-        fontSize: "1rem", // Even larger text on md screens and above
+        fontSize: "1rem",
       },
       [theme.breakpoints.down("sm")]: {
-        fontSize: "0.8rem", // Larger text on sm screens and above
+        fontSize: "0.8rem",
       },
     },
-
     footer: {
       backgroundColor: theme.palette.primary.dark,
       color: theme.palette.text.secondary,
       padding: theme.spacing(2),
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-between", // Larger text on sm screens and above
-
+      ...layouts.justifyBetween,
+      ...layouts.row,
       [theme.breakpoints.down("sm")]: {
-        flexDirection: "column",
-
-        justifyContent: "space-between", // Larger text on sm screens and above
-        alignItems: "center",
+        ...layouts.col,
+        ...layouts.allCentered,
       },
     },
-    socialMedia: {},
+    socialMedia: {
+      ...layouts.row,
+    },
     copyRight: {
-      display: "flex",
-      justifyContent: "flex-end",
-      alignItems: "center",
+      ...layouts.justifyEnd,
+      ...layouts.alignedEnd,
     },
   };
 });

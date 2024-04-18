@@ -1,3 +1,4 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => ({
@@ -43,25 +44,20 @@ export const useStyles = makeStyles()((theme) => ({
   },
 
   titleContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
+    ...layouts.col,
+    ...layouts.alignStart,
+
     textAlign: "left",
   },
 
   container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "center",
+    ...layouts.col,
+    ...layouts.alignStart,
+    ...layouts.xCentered,
   },
 
   info: {
     marginBlock: theme.spacing(1),
     marginInlineEnd: theme.spacing(1),
-  },
-  link: {
-    textDecoration: "none",
-    color: "inherit", // optionally, inherit color from parent
   },
 }));

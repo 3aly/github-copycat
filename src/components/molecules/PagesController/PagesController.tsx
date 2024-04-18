@@ -10,7 +10,6 @@ const Pagination = ({ total, currentPage, onPageChange }: PaginationProps) => {
 
   const pageCount = Math.ceil(total / 5);
 
-  // Determine the middle page numbers
   const middlePages = () => {
     const pages = [];
     let start = Math.max(1, currentPage - 1);

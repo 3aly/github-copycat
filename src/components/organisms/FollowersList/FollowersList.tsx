@@ -5,6 +5,8 @@ import { useStyles } from "./FollowersList.styles";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { quickStyles } from "@constants/theme";
+import { toggleLoading } from "@redux/LoaderReducer";
+import { useDispatch } from "react-redux";
 
 const FollowersList = ({
   followersData,
@@ -15,10 +17,16 @@ const FollowersList = ({
 }) => {
   const { classes } = useStyles();
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const handleFollowerClick = (login: string) => {
+    dispatch(toggleLoading());
+
+    setTimeout(() => {
+      dispatch(toggleLoading());
+    }, 500);
     navigate(`/user/${login}`);
   };
   return (

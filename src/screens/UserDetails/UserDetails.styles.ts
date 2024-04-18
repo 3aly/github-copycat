@@ -1,37 +1,32 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => ({
   container: {
-    // margin: theme.spacing(10),
+    margin: theme.spacing(10),
     width: "80%",
-
-    alignSelf: "center",
+    ...layouts.selfCenter,
+    ...layouts.col,
+    ...layouts.yCentered,
     borderRadius: 10,
     background: theme.palette.background.default,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+
     padding: theme.spacing(10),
     [theme.breakpoints.up("md")]: {
-      // styles for screens larger than 'md'
-      display: "flex",
-      justifyContent: "space-between",
+      ...layouts.justifyBetween,
     },
     [theme.breakpoints.down("md")]: {
-      // styles for screens larger than 'md'
       margin: theme.spacing(10),
       padding: theme.spacing(4),
     },
   },
 
   contactContainer: {
-    display: "flex",
-    flexDirection: "row",
+    ...layouts.row,
+
     [theme.breakpoints.down("md")]: {
-      // changes to row layout on larger screens
-      flexDirection: "column",
-      alignContent: "center",
-      // backgroundColor: "red",
+      ...layouts.col,
+      ...layouts.contentCenter,
     },
   },
 
@@ -43,10 +38,8 @@ export const useStyles = makeStyles()((theme) => ({
     },
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(1),
-      // marginInline: theme.spacing(2),
     },
     [theme.breakpoints.down("sm")]: {
-      // backgroundColor: "red",
       padding: theme.spacing(2),
       marginInline: theme.spacing(0),
     },

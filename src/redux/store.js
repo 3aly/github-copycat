@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import taskBoardsReducer from "./taskBoardsReducer";
 import themeReducer from "./themeReducer";
 import LoaderReducer from "./LoaderReducer";
 

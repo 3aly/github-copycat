@@ -14,7 +14,7 @@ export const useFetchAllUsers = ({
     queryKey: ["useFetchAllUsers"],
     onError,
     queryFn: () => queryAllUsers(),
-    enabled: false,
+    enabled: true,
 
     refetchOnWindowFocus: false,
 

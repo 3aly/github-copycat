@@ -1,10 +1,10 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => {
   return {
     container: {
-      display: "flex",
-      flexDirection: "column",
+      ...layouts.col,
       width: "100%",
       paddingBlock: theme.spacing(2),
       backgroundColor: theme.palette.background.default,

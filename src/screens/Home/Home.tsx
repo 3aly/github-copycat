@@ -13,14 +13,14 @@ import { useSelector } from "react-redux";
 function Home() {
   const { isLoading } = useSelector((state: StoreType) => state.loader);
 
-  const [users, setUsers] = useState<User[]>(fakeData);
+  // const [users, setUsers] = useState<User[]>(fakeData);
   const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState("");
 
   const { classes } = useStyles();
 
   const {
-    // data: users,
+    data: users = [],
     isError,
     isLoading: isUsersLoading,
   } = useFetchAllUsers({
@@ -34,7 +34,7 @@ function Home() {
     setCurrentPage(page);
   };
 
-  if (isLoading) return <Loader isLoading={isLoading} />;
+  if (isUsersLoading) return <Loader isLoading={isLoading} />;
   if (isError)
     return (
       <Typography color={"error"} variant="h6">

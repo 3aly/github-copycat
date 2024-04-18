@@ -1,26 +1,27 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => {
   return {
     responsiveText: {
-      fontSize: "2.3rem", // Default size
+      fontSize: "2.3rem",
       [theme.breakpoints.down("lg")]: {
-        fontSize: "2.2rem", // Even larger text on md screens and above
+        fontSize: "2.2rem",
       },
       [theme.breakpoints.down("md")]: {
-        fontSize: "2rem", // Even larger text on md screens and above
+        fontSize: "2rem",
       },
       [theme.breakpoints.down("sm")]: {
-        fontSize: "1.5rem", // Larger text on sm screens and above
+        fontSize: "1.5rem",
       },
     },
     container: {
-      alignSelf: "flex-start",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      margin: 15,
-      // paddingInline: 350,
+      ...layouts.row,
+      ...layouts.selfStart,
+      ...layouts.justifyBetween,
+      ...layouts.yCentered,
+
+      margin: theme.spacing(2),
     },
   };
 });

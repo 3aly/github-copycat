@@ -1,3 +1,4 @@
+import { layouts } from "@constants/quickstyles";
 import { makeStyles } from "tss-react/mui";
 
 export const useStyles = makeStyles()((theme) => {
@@ -5,16 +6,11 @@ export const useStyles = makeStyles()((theme) => {
     avatar: {
       width: theme.spacing(12),
       height: theme.spacing(12),
-
       [theme.breakpoints.down("xl")]: {
         height: theme.spacing(10),
         width: theme.spacing(10),
       },
       [theme.breakpoints.down("lg")]: {
-        height: theme.spacing(8),
-        width: theme.spacing(8),
-      },
-      [theme.breakpoints.down("md")]: {
         height: theme.spacing(8),
         width: theme.spacing(8),
       },
@@ -24,15 +20,15 @@ export const useStyles = makeStyles()((theme) => {
       },
     },
     responsiveText: {
-      fontSize: "1rem", // Default size
+      fontSize: "1rem",
       [theme.breakpoints.down("lg")]: {
-        fontSize: "1.5rem", // Even larger text on md screens and above
+        fontSize: "1.5rem",
       },
       [theme.breakpoints.down("md")]: {
-        fontSize: "1.25rem", // Even larger text on md screens and above
+        fontSize: "1.25rem",
       },
       [theme.breakpoints.down("sm")]: {
-        fontSize: "0.8rem", // Larger text on sm screens and above
+        fontSize: "0.8rem",
       },
     },
     title: {
@@ -40,16 +36,15 @@ export const useStyles = makeStyles()((theme) => {
     },
     container: {
       marginBlock: theme.spacing(2),
-
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
+      ...layouts.col,
+      ...layouts.alignStart,
     },
     clickable: {
       cursor: "pointer",
-      display: "flex",
-      flexDirection: "column",
+      ...layouts.col,
     },
-    usernameContainer: { display: "flex", flexDirection: "row" },
+    usernameContainer: {
+      ...layouts.row,
+    },
   };
 });
